@@ -8,7 +8,7 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column(name = "category_name",nullable = false)
+    @Column(name = "category_name",nullable = false,unique = true)
     private String name;
     public Category(){}
     public Category(String name)
