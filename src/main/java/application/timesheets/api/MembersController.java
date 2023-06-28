@@ -2,6 +2,7 @@ package application.timesheets.api;
 
 import application.timesheets.models.Client;
 import application.timesheets.models.Member;
+import application.timesheets.models.MemberDTO;
 import application.timesheets.services.IClientsService;
 import application.timesheets.services.IMembersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class MembersController {
         membersService.AddMember(member);
     }
     @GetMapping("{id}")
-    public Member GetMemberById(@PathVariable int id)
+    public MemberDTO GetMemberById(@PathVariable int id)
     {
         return membersService.GetMemberById(id);
     }

@@ -2,11 +2,10 @@ package application.timesheets.services;
 
 import application.timesheets.exceptions.EntityAlreadyExist;
 import application.timesheets.exceptions.NotFoundException;
-import application.timesheets.models.Category;
 import application.timesheets.models.Client;
 import application.timesheets.repositories.IClientsRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -14,8 +13,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
 
 @Service
 public class ClientsService implements IClientsService{

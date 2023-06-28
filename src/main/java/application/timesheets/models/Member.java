@@ -4,6 +4,14 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "members")
 public class Member {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;

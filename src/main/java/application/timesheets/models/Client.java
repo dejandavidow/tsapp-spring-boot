@@ -2,6 +2,8 @@ package application.timesheets.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "clients")
 public class Client {

@@ -1,16 +1,11 @@
 package application.timesheets.api;
 
-import application.timesheets.exceptions.NotFoundException;
 import application.timesheets.models.Client;
-import application.timesheets.repositories.ICategoriesRepository;
-import application.timesheets.repositories.IClientsRepository;
 import application.timesheets.services.IClientsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("api/Clients")

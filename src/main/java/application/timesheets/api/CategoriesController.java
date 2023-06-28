@@ -4,6 +4,7 @@ import application.timesheets.exceptions.EntityAlreadyExist;
 import application.timesheets.exceptions.NotFoundException;
 import application.timesheets.models.Category;
 import application.timesheets.repositories.ICategoriesRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -11,7 +12,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,9 +22,9 @@ public class CategoriesController {
     private ICategoriesRepository categoriesRepository;
     @GetMapping
     public List<Category> GetCategories(@RequestParam(required = false) String name,
-                                        @RequestParam(required = false) Character letter,
-                                        @RequestParam(defaultValue = "0",name = "page") int pageNumber,
-                                        @RequestParam(defaultValue = "5",name = "size") int pageSize
+                                           @RequestParam(required = false) Character letter,
+                                           @RequestParam(defaultValue = "0",name = "page") int pageNumber,
+                                           @RequestParam(defaultValue = "5",name = "size") int pageSize
                                         )
     {
         Pageable paged = PageRequest.of(pageNumber,pageSize, Sort.by("name"));
