@@ -16,8 +16,8 @@ public class Project {
     @JoinColumn(name = "client_id")
     private Client Client;
     @ManyToOne
-    @JoinColumn(name = "member_id")
-    private Member member;
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public void setId(int id)
     {
@@ -66,11 +66,11 @@ public class Project {
     public void setClient(application.timesheets.models.Client client) {
         Client = client;
     }
-    public Member getMember() {
-        return member;
+    public User getMember() {
+        return user;
     }
 
-    public void setMember(Member member) {
-        this.member = member;
+    public void setMember(User member) {
+        this.user = member;
     }
 }
